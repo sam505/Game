@@ -49,8 +49,12 @@ class Tournament:
         for m in range(no_players):
             print(self.players[m].player_id[0], end=" ")
             for score in self.players[m].get_scores():
-                print(" | ", end=" ")
-                print(score, end="  ")
+                if score == "--":
+                    print(" | ", end=" ")
+                    print(score, end=" ")
+                else:
+                    print(" | ", end=" ")
+                    print(score, end="  ")
             print()
         print("------", end="")
         for n in range(no_games):

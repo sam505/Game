@@ -103,15 +103,21 @@ class Game:
         return self.scores
 
 
-def main():
-    try:
-        file_name = sys.argv[1]
-        tournament = Tournament(file_name)
-        tournament.read_results(file_name)
-        tournament.display_results()
-    except IndexError:
-        raise SystemExit(f"[Usage:] {sys.argv[0]} <results file>")
+class Main:
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def main():
+        try:
+            file_name = sys.argv[1]
+            tournament = Tournament(file_name)
+            tournament.read_results(file_name)
+            tournament.display_results()
+        except IndexError:
+            raise SystemExit(f"[Usage:] {sys.argv[0]} <results file>")
 
 
 if __name__ == "__main__":
-    main()
+    main = Main()
+    main.main()
